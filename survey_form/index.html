@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .required-label::before {
+            content: "*";
+            color: red;
+            display: inline;
+        }
+    </style>
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Survey Form</h1>
+        <form id="survey-form" onsubmit="return validateForm()">
+            <div class="input-field">
+                <label for="first-name" class="required-label">First Name:</label>
+                <input type="text" id="first-name" required>
+                <span class="error" id="first-name-error"></span>
+            </div>
+
+            <div class="input-field">
+                <label for="last-name" class="required-label">Last Name:</label>
+                <input type="text" id="last-name" required>
+                <span class="error" id="last-name-error"></span>
+            </div>
+
+            <div class="input-field">
+                <label for="date-of-birth" class="required-label">Date of Birth:</label>
+                <input type="date" id="date-of-birth" required>
+                <span class="error" id="date-of-birth-error"></span>
+            </div>
+
+            <div class="input-field">
+                <label for="country" class="required-label">Country:</label>
+                <select id="country" required>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+
+            <div class="input-field">
+                <label for="gender">Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    
+                    <input type="radio" id="female" name="gender" value="Female" required>
+                    <label for="female">Female</label>
+                </div>
+                <span class="error" id="gender-error"></span>
+            </div>
+            
+            
+            
+
+            <div class="input-field">
+                <label for="profession" class="required-label">Profession:</label>
+                <input type="text" id="profession" required>
+                <span class="error" id="profession-error"></span>
+            </div>
+
+            <div class="input-field">
+                <label for="email" class="required-label">Email:</label>
+                <input type="email" id="email" required>
+                <span class="error" id="email-error"></span>
+            </div>
+
+            <div class="input-field">
+                <label for="mobile-number" class="required-label">Mobile Number:</label>
+                <input type="tel" id="mobile-number" required><br>
+                <span class="error" id="mobile-number-error"></span>
+            </div>            
+
+            <div class="button-container">
+                <button type="submit" id="submit-button">Submit</button>
+                <button type="reset" id="reset-button">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popup-content">
+                <!-- Filled values with labels will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
